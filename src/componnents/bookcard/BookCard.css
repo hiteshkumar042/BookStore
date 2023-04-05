@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#card-container-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+   
+    
+}
+#book-pic{
+background-color: #F5F5F5;
+height: 170px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+#book-pic img{
+    width: 105px;
+    height: 135px;
+    
+}
+
+
+
+/* below Image */
+
+#book-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0.8em;
+   
+    
+}
+
+#book-heading{
+    font-size: medium;
+    font-weight:600;
+}
+#book-author{
+    font-size: 0.7em;
+    color: #878787;
+}
+#book-rating{
+    display: flex;
+    padding-top: 0.2em;
+
+}
+#rating{
+    background-color: #388E3C;
+    color: white;
+    width:28px;
+    height: 13px;
+    font-size: 0.6em;
+    
+
+}
+#reviewer{
+    width:18px;
+    height: 13px;
+    font-size: 0.6em;
+    color: #878787;
+    margin-left: 0.5em;
+}
+#book-price{
+display: flex;
+flex-direction: row;
+padding-top: 0.5em;
+justify-content: center;
+align-items: center;
+}
+#actual-price{
+    font-weight: 600;
+    font-size: small;
+}
+
+#original-price{
+    font-weight: 300;
+    font-size: 0.7em;
+text-decoration:line-through;
+padding-left: 0.5em;
+color: #878787;
+}

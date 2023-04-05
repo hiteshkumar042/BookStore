@@ -1,0 +1,155 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.bookdetails-navigation-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    
+}
+
+.bookdetails-navigation-path{
+
+width: 70%;
+display: flex;
+}
+.bookdetails-home{
+    font-family: Roboto,Regular;
+    font-size: 0.8em;
+    color: #9D9D9D;
+}
+.bookdetails-booktitle{
+    padding-left: 0.3em;
+    font-family: Roboto,Regular;
+    font-size: 0.8em;
+}
+
+.bookdetails-grid-main{
+    width: 70%;
+    margin: auto;
+}
+
+.book-details-poster{
+    
+    border: 2px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0 1em 0; 
+   
+}
+
+.book-details-poster>img{
+    height: 45vh;
+   
+}
+
+#addbag-waitlist{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2em;
+}
+#addtobag{
+    border: 2px solid black ;
+    padding: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #A03037;
+    color: white;
+}
+#wishlist{
+    border: 2px solid black ;
+    padding: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#bookdetails-desc{
+   
+    padding-left: 2em;
+    
+}
+
+.bookdetails-author{
+    color: #878787;
+    font-size: 1em;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.bookdetails-summery{
+    margin: 1.5em 0 1.5em 0;
+}
+#bookdetails-rating-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+
+}
+#book-details-rating{
+    background-color: #388E3C;
+    color: white;
+    width:40px;
+    height: 20px;
+    font-size: 0.9em;
+    text-align: center;
+    
+
+}
+.stars-container{
+    margin: 0.5em 0;
+}
+#book-details-reviewer{
+    width:40px;
+    height: 20px;
+    font-size: 0.9em;
+    color: #878787;
+   margin-left: 0.5em;
+}
+
+#bookdetails-price-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0.5em 0 0.5em 0; ;
+}
+#bookdetails-actual-price{
+font-size: 1.5em;
+font-weight: 600;
+}
+#bookdetails-original-price{
+    font-size: 0.8em;
+    margin-left: 0.5em;
+    color: #878787;
+    text-decoration: line-through;
+}
+
+.submit-feedback{
+    text-align: end;
+}
+
+.submit-feedback>button{
+    background-color: #3371B5;
+    color: white;
+    width: 76px;
+    height: 24px;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width:1200px) {
+    #bookdetails-desc{
+   
+        padding-left: 0em;
+        padding-top: 1em;
+        
+    }
+    
+    
+}

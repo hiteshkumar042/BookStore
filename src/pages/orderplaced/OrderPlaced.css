@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-order-placed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.order-placed-img{
+    margin-top: 2em;
+}
+.order-id-box{
+    text-align: center;
+}
+.table-main{
+    margin-top: 2em;
+
+}
+ thead>tr>td{
+    background-color:#DCDCDC;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    font: normal normal medium 12px/15px Lato;
+ }
+
+ tbody> tr>td {
+    border: 1px solid black;
+    width: 20vw;
+    height: 50px;
+    text-align: center;
+    font: normal normal medium 12px/15px Lato;
+ }
+.shopping-btn{
+    margin-top: 2em;
+}

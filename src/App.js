@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import LandingPage from './pages/landingpage/LandingPage';
+import LogIn from './pages/LogIn/LogIn';
+import SignUp from './pages/SignUp/SignUp';
+import Header from './componnents/header/Header';
+import Router from './router/Router';
+import BookItems from './componnents/bookcard/BookCard';
+import Dashboard from './componnents/dashboard/Dashboard';
+import BookDetails from './componnents/bookdetails/BookDetails';
+import OrderPlaced from './pages/orderplaced/OrderPlaced';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <LandingPage/> */}
+      {/* <Header/> */}
+      {/* <LogIn/> */}
+      <Router/>
+      {/* <SignUp/> */}
+      {/* <OrderPlaced/> */}
+      {/* <BookItems/> */}
+      {/* <Dashboard/> */}
+      {/* <BookDetails/> */}
     </div>
   );
 }

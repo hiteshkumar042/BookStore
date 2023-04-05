@@ -1,0 +1,65 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#dash-main-container {
+  
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  
+}
+
+
+#grid-dashboard {
+  width: 70%;
+  
+  
+}
+#second-row {
+  display: flex;
+  flex-direction: row;
+  
+  width: 70%;
+  justify-content: space-between;
+  margin: 1.2em 0;
+}
+#left-side-book {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+#right-side-book select {
+  padding: 0.4em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#items128 {
+  color: #9d9d9d;
+  font-size: 0.7em;
+  padding-left: 0.5em;
+  font-family: Roboto, Regular;
+}
+#books-text {
+  font-family: Roboto, Regular;
+  font-size: 1.3em;
+}
+
+@media screen and (max-width: 500px) {
+  #items128{
+  display: none;
+ 
+ }   
+ 
+}
+.css-mf1cb5-MuiButtonBase-root-MuiIconButton-root{
+  color: aliceblue !important;
+}

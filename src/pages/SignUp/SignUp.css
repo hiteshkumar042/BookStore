@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  /* -----------main ------------------- */
+  
+  
+  /* left Side */
+  .full-screen-signup{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #786d6d;
+  }
+  
+  .left-container-signup{
+    width: 26vw;
+    height: 50vh;
+    margin-right: 2em;
+    background-color:#F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    padding: 0.8em;
+    position:absolute;
+    left: 25%;
+    border-radius: 2em  0 0 2em;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    
+  }
+  
+  .signup-main{
+   position:absolute;
+   left:50%
+  }
+  
+  .logo-box-signup{
+    height: 80%;
+    padding: 0.8em;
+    padding-left: 0;
+    padding-bottom: 0;
+  
+  }
+  .logo-box-signup img{
+    width: 99%;
+    height: 83%;
+    border-radius: 50%;
+  } 
+  /* ------------------------------ */
+  .signup-login{
+    display: flex;
+    justify-content: space-between;
+   margin-bottom: 1.2em;
+  }
+  
+  .name-input-signup{
+      margin-bottom: 2em;
+  }
+  .email-input-signup{
+      margin-bottom: 2em;
+  }
+  .pass-input-signup{
+    margin-bottom: 2em;
+}
+.mobile-input-signup{
+    margin-bottom: 2em;
+}
+  
+  
+  .signup-btn-btn{
+      width: 100%;
+      background-color: brown;
+      height: 5vh;
+      color: white;
+      border: none;
+  }
