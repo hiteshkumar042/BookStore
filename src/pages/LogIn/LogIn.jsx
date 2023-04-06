@@ -57,6 +57,7 @@ function LogIn(props) {
 
     if (emailTest === true && passwordTest === true) {
       let response = await login(logInObj);
+      localStorage.setItem("token", response.data.result.accessToken);
       console.log(response);
       console.log(response.data.message);
     }

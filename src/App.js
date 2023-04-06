@@ -8,6 +8,7 @@ import BookItems from './componnents/bookcard/BookCard';
 import Dashboard from './componnents/dashboard/Dashboard';
 import BookDetails from './componnents/bookdetails/BookDetails';
 import OrderPlaced from './pages/orderplaced/OrderPlaced';
+import AddToCart from './componnents/addtocart/AddToCart';
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
       {/* <Header/> */}
       {/* <LogIn/> */}
       <Router/>
+      {/* <AddToCart/> */}
       {/* <SignUp/> */}
       {/* <OrderPlaced/> */}
       {/* <BookItems/> */}

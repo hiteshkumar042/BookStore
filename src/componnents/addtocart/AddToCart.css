@@ -1,0 +1,18 @@
+.add-to-counter{
+   
+    display: flex;
+}
+.counter-val{
+    height: 2rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-to-counter button{
+
+    width: 4rem;
+    font-size:1.4em;
+    cursor: pointer;
+    font-weight: medium;
+}

@@ -53,6 +53,7 @@ display: flex;
     display: flex;
     justify-content: space-between;
     margin-top: 1.2em;
+    
 }
 #addtobag{
     border: 2px solid black ;
@@ -69,6 +70,7 @@ display: flex;
     text-align: center;
     background-color: black;
     color: white;
+    width: 7em;
 }
 
 #bookdetails-desc{
@@ -141,6 +143,7 @@ font-weight: 600;
     width: 76px;
     height: 24px;
     font-size: 0.8em;
+    margin-right: 1em;
 }
 
 @media screen and (max-width:1200px) {
