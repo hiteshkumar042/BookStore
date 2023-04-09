@@ -1,0 +1,86 @@
+.home-cartpage{
+    display: flex;
+    width: 70%;
+    
+    margin: auto;
+}
+.home-cartpage{
+    font-family:Roboto, Medium;
+    margin: 1em auto;
+    font-size: 1em;
+    
+   
+}
+
+.home-cart{
+    color: #9D9D9D;
+    margin-right: 0.5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.firstrow-mycart{
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    flex-wrap: wrap;
+}
+.mycart-text{
+   font-family: Roboto, Medium;
+}
+.cartpage-boxes{
+
+    position: relative;
+    right: 7%;
+    
+}
+
+.select-location{
+    font-size: 0.7em;
+    width: 15vw;
+    height: 3vh;
+    outline: none;
+    border: none;
+    font-family: Roboto, Medium;
+}
+
+.location-mark-title{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid grey;
+}
+.place-order-btn{
+    display:flex;
+    justify-content:flex-end;
+
+    
+    ;
+}
+.place-order-btn button{
+    width: 151px;
+    height: 35px;
+    background-color: #3371B5;
+    color: white;
+    border: none;
+}
+.place-order-btn button:hover{
+    background-color: #2676cc;
+    cursor: pointer;
+    color: white;
+}
+.cartpage-address{
+
+    position: relative;
+    right: 7%;
+    
+}
+.cartpage-order-summery{
+
+    position: relative;
+    right: 7%;
+    
+}

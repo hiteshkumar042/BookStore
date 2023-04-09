@@ -5,6 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
 import Typography from '@mui/material/Typography';
 import BookStoreLogo from '../../assets/education/education.png'
 import InputBase from '@mui/material/InputBase';
@@ -17,6 +18,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Link } from 'react-router-dom';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -56,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function Header({goForLogin}) {
+export default function Header({goForLogin,totalCartQty}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -197,14 +200,21 @@ export default function Header({goForLogin}) {
                                 <PersonOutlineOutlinedIcon id="prsonpng" />
                                 <div>Profile</div>
                             </IconButton>
-                            <IconButton id='prof2' size="small" edge="end"
-                                aria-controls={menuId}
-                                aria-haspopup="true" onClick={handleProfileMenuOpen} >
+
+                            <Link to="/cart">
+                            <IconButton id='prof2' size="small" edge="end">
+                                {/* aria-controls={menuId} */}
+                                 {/* aria-haspopup="true" onClick={handleProfileMenuOpen} */}
                                 {/* <img src={cartpng} alt="" /> */}
+                                <Badge badgeContent={totalCartQty} color="warning">
+                                <div className="icon-cart2">
                                 <ShoppingCartOutlinedIcon/>
                                 <div>Cart</div>
+                                </div>
+                                
+                                </Badge> 
                             </IconButton>
-
+                            </Link>
 
                         </Box>
                         <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

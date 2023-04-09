@@ -36,7 +36,7 @@ function Dashboard() {
         <div id="second-row">
           <div id="left-side-book">
           <h3 id='books-text'>Books</h3>
-          <h6 id='items128'>(128 items)</h6>
+          <h6 id='items128'>({book.length} items)</h6>
           </div>
           <div id="right-side-book">
             <select name="" id="">

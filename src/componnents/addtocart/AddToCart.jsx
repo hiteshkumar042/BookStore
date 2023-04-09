@@ -1,9 +1,10 @@
 import React from 'react'
 import './AddToCart.css'
-import { modifyCartItemService, removeItemCartService ,getCartItemService} from "../../services/DataServices";
+import { modifyCartItemService, removeItemCartService} from "../../services/DataServices";
+
 
 function AddToCart({setAddToBag,getCartItem,bookObj}) {
-  console.log(bookObj);
+  
 
   const deleteItem = async() => {
     let response = await removeItemCartService(bookObj._id)
@@ -20,7 +21,7 @@ function AddToCart({setAddToBag,getCartItem,bookObj}) {
 
     }else {
 
-      if(bookObj.quantityToBuy == 1){
+      if(bookObj.quantityToBuy === 1){
         deleteItem()
       }else{
         qty = {
@@ -33,7 +34,7 @@ function AddToCart({setAddToBag,getCartItem,bookObj}) {
    
     let response = await modifyCartItemService(bookObj._id,qty)
     console.log(response)
-    getCartItem()  
+     getCartItem()  
   };
 
   return (

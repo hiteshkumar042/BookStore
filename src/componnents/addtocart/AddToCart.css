@@ -3,15 +3,15 @@
     display: flex;
 }
 .counter-val{
-    height: 2rem;
-    width: 4rem;
+    height: 1.9rem;
+    width: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .add-to-counter button{
 
-    width: 4rem;
+    width: 3rem;
     font-size:1.4em;
     cursor: pointer;
     font-weight: medium;

@@ -5,38 +5,35 @@ import Grid from '@mui/material/Grid';
 import Bookimage from '../../assets/bookimage/image10@2x.png'
 import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
 import Button from '@mui/material/Button';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddToCart from '../addtocart/AddToCart';
 import { getCartItemService,addCartItemService } from '../../services/DataServices';
 
 function BookDetails({setToggle,bookData}) {
   const [addToBag,setAddToBag] = useState(true)
   const [bookObj,setBookObj] = useState({})
-  // console.log(bookData)
+  console.log(bookData)
 
   const addToCart = async(bookId) => {
     let response = await addCartItemService(bookId)
     console.log(response)
-  await  getCartItem()
+    await  getCartItem()
     return response
 }
 
   const getCartItem = async() => {
     let response = await getCartItemService()
     // let book = response.data.result.filter((obj)=>obj.product_id._id===bookData._id)
-    // console.log(book)
+    
 
     // console.log(response)
-    console.log(bookData._id)
+     console.log(bookData._id)
 
     for(let i = 0;i < response.data.result.length ; i++){
       
 
       if(response.data.result[i]?.product_id._id === bookData._id){
-          let itemNo = response.data.result[i].quantityToBuy
-          // setNumOfItem(itemNo)
-          // setCartId(response.data.result[i]._id)
-          console.log(itemNo)
+          let bookqty = response.data.result[i].quantityToBuy
+           console.log(bookqty)
           setBookObj(response.data.result[i])
           setAddToBag(false)
           
@@ -48,7 +45,7 @@ function BookDetails({setToggle,bookData}) {
   useEffect(()=> {
     getCartItem()
     
-},[])
+})
   
 
   return (
@@ -64,7 +61,7 @@ function BookDetails({setToggle,bookData}) {
       <Grid className='bookdetails-grid' container direction='row'>
             <Grid item container direction='column' lg={4}>
                 <Grid item><div className="book-details-poster">
-                <img src={Bookimage} alt="Book Image" />
+                <img src={Bookimage} alt="bookphoto" />
                 </div>
                 </Grid>
                     

@@ -126,3 +126,8 @@
     margin-right: 2em; 
     }
 }
+
+.icon-cart2{
+    display: flex;
+    flex-direction: column;
+}
