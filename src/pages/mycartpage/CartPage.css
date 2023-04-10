@@ -84,3 +84,33 @@
     right: 7%;
     
 }
+.ordersummery-title{
+    
+    padding: 1em;
+    text-align: left;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+}
+
+/* book Order */
+.order-summery-btn{
+    display:flex;
+    justify-content:flex-end;
+
+    
+    ;
+}
+.order-summery-btn button{
+    width: 151px;
+    height: 35px;
+    background-color: #3371B5;
+    color: white;
+    border: none;
+}
+.order-summery-btn button:hover{
+    background-color: #2676cc;
+    cursor: pointer;
+    color: white;
+}

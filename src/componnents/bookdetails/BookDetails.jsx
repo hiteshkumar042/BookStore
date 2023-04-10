@@ -18,7 +18,7 @@ function BookDetails({setToggle,bookData}) {
     console.log(response)
     await  getCartItem()
     return response
-}
+    }
 
   const getCartItem = async() => {
     let response = await getCartItemService()
@@ -45,7 +45,7 @@ function BookDetails({setToggle,bookData}) {
   useEffect(()=> {
     getCartItem()
     
-})
+  },[])
   
 
   return (
@@ -75,7 +75,7 @@ function BookDetails({setToggle,bookData}) {
             </Grid>
             <Grid id='bookdetails-desc' item container direction='column' lg={8} xs={12}>
                 <h3 style={{fontSize:'1.5em',textTransform:"capitalize"}}>{bookData.bookName}</h3>
-                <p className='bookdetails-author' >{bookData.author}</p>
+                <div className='bookdetails-author' >{bookData.author}</div>
                 <div id="bookdetails-rating-box">
                     <div id="book-details-rating">4.5 *</div>
                      <div id="book-details-reviewer">(20)</div>
@@ -87,12 +87,12 @@ function BookDetails({setToggle,bookData}) {
                 <hr />
                 <div className="bookdetails-summery">
                     <li style={{color:"#878787"}}>Book Details</li>
-                    <p style={{color:"#373434",paddingTop:"0.3em"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laudantium Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laudantium. </p>
+                    <div style={{color:"#373434",paddingTop:"0.3em"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laudantium Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laudantium. </div>
                 </div>
                 <hr />
                 <h3 style={{margin:"0.5em 0 0.5em 0"}}>Customer Feedback</h3>
                 <div style={{backgroundColor:"#F5F5F5",padding:"0.8em  0 0.8em 0.8em"}} id="feedback-container">
-                    <p>Overall rating</p>
+                    <div>Overall rating</div>
                     <div className="stars-container">
                     <GradeOutlinedIcon/>
                     <GradeOutlinedIcon/>

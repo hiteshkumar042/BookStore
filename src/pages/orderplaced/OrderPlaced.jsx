@@ -3,6 +3,7 @@ import Header from "../../componnents/header/Header";
 import OrderPlacedImg from "../../assets/orderplaced.png";
 import Button from '@mui/material/Button';
 import "./OrderPlaced.css";
+import { Link } from 'react-router-dom';
 
 import React from "react";
 
@@ -19,7 +20,7 @@ function OrderPlaced() {
           <br /> The Order is #123456 save the order id for <br /> further
           communication
         </div>
-        <div className="table-main">
+        <table className="table-main">
           <thead>
             <tr>
               <td>Email Us</td>
@@ -37,11 +38,14 @@ function OrderPlaced() {
               </td>
             </tr>
           </tbody>
-        </div>
+        </table>
         <div className="shopping-btn">
+          <Link to="/dashboard">
           <Button variant="contained" disableElevation>
             Continue Shopping
           </Button>
+          </Link>
+          
         </div>
       </div>
       <Footer />

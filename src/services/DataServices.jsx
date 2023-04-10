@@ -34,3 +34,14 @@ export const removeItemCartService = async(id) => {
     let response = await axios.delete(`https://bookstore.incubation.bridgelabz.com/bookstore_user/remove_cart_item/${id}`,headerConfig)
     return response
 }
+
+export const AddressItemCartService = async(data) => {
+    let response = await axios.put(`https://bookstore.incubation.bridgelabz.com/bookstore_user/edit_user`,data,headerConfig)
+    return response
+}
+
+export const AddOrderService = async (data) => {
+    let response = await axios.post("https://bookstore.incubation.bridgelabz.com/bookstore_user/add/order", data, headerConfig)
+    return response
+}
+

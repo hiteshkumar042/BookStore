@@ -3,19 +3,23 @@ import React from "react";
 import Header from "../../componnents/header/Header";
 import Box from "@mui/material/Box";
 import MyCartComponent from "../../componnents/cartcomponent/MyCartComponent";
-import { getCartItemService } from "../../services/DataServices";
+import { getCartItemService,AddOrderService } from "../../services/DataServices";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from 'react-router-dom';
+import AddressDetails from "../../componnents/addressdetails/AddressDetails";
+import OrderSummery from "../../componnents/ordersummery/OrderSummery";
 
 
 function CartPage() {
   const [cartItems, setCartItem] = React.useState([]);
-  console.log(cartItems)
-  
-  //get cart items
+  const [toggle,setToggle] = React.useState({mycart:false,addressDetails:false,orderSumm:false});
+  // console.log(cartItems)
+
+  //getting cart items
   const getCartItem = async () => {
     let response = await getCartItemService();
     let cartItem = response.data.result;
+    //Strong cart items in cartItems Array/collection
     setCartItem(cartItem);
   };
  
@@ -33,13 +37,28 @@ function CartPage() {
   const completeaddress = addressData.map((addr) => `${addr.fullAddress}, ${addr.city},${addr.state} `)
   // console.log(completeaddress)
   
-  
+  //On Load it will run useEffect to get the cart Items
   React.useEffect(() => {
     getCartItem();
     
   }, []);
-
+  
+  //Strong cart item quantity in TotalcartQty
   const totalCartQty = bookqt;
+
+  const checkout = async()=>{
+    let arrayForHittingServer = cartItems.map((cartObj) => ({
+      "product_id": cartObj.product_id._id,
+      "product_name": cartObj.product_id.bookName,
+      "product_quantity": cartObj.quantityToBuy,
+      "product_price": cartObj.product_id.discountPrice
+    }))
+    let data = { orders: arrayForHittingServer }
+        let response = await AddOrderService(data)
+        console.log(response);
+  }
+
+
   return (
     <div>
       <Header totalCartQty={totalCartQty} />
@@ -83,35 +102,73 @@ function CartPage() {
           />
         ))}
         <div className="place-order-btn">
-          <button>Place Order</button>
+         {
+            toggle.mycart?"":(<button onClick={()=>setToggle({mycart:true,addressDetails:true})} >Place Order</button>)
+         } 
         </div>
       </Box>
-      {/* Address Details */}
-      <Box sx={{
-         p: 2,
 
-          borderRadius: '5px',
-         boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.2)'
-          }}
-        className="cartpage-address"
-        style={{width: "56%", margin: " 1em auto" }}
+      {/* Address Details */}
       
-      >
-        Address
-      </Box>
+        <Box sx={{
+          p: 2,
+ 
+           borderRadius: '5px',
+          boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.2)'
+           }}
+         className="cartpage-address"
+         style={{width: "56%", margin: " 1em auto" }}
+       
+       >
+        {
+          toggle.addressDetails? <AddressDetails setToggle={setToggle}/>:(<div>Customer Details</div>)
+        }  
+       </Box>
+      
       {/* order Summery */}
-      {/* <Box sx={{
-         p: 2,
-         
+
+      {
+        toggle.orderSumm?<Box sx={{
+          p: 2,
           borderRadius: '5px',
-         boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.2)'
-          }}
-        className="cartpage-order-summery"
-        style={{width: "56%", margin: " 1em auto" }}
+          boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.2)'
+           }}
+         className="cartpage-order-summery"
+         style={{width: "56%", margin: " 1em auto" }}
+       
+       >
+          <div id="details-address">
+            <h4>Order Summery</h4>
+        <button className='add-new-add'> Add New Address</button>
+      </div>
+         
+        {
+              cartItems.map((bookObj) =><OrderSummery key={bookObj._id} bookObj={bookObj}/>)
+        }
+         
+         <div className="order-summery-btn">
+         <Link to="/order-confirmation">
+         <button onClick={checkout} >CHECKOUT</button>
+         </Link>
+          
+        </div>
+         
+ 
+         
+       </Box>:<Box sx={{
+          p: 2,
+          borderRadius: '5px',
+          boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.2)'
+           }}
+         className="cartpage-order-summery"
+         style={{width: "56%", margin: " 1em auto" }}
+       
+       >
+         <div>Order Summery</div>
+         
+       </Box>
+      }
       
-      >
-        Order Summery
-      </Box> */}
     </div>
   );
 }

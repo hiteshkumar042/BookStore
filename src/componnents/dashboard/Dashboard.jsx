@@ -48,7 +48,7 @@ function Dashboard() {
         
           <Grid  container spacing={4}>
           {
-            book.map((bookObj)=>(<BookCard setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
+            book.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
           }
           </Grid>:
         

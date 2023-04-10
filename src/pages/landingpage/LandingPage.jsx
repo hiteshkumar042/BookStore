@@ -6,6 +6,7 @@ import SignUp from "../SignUp/SignUp";
 
 function LandingPage() {
   const [toggle, setToggle] = useState(false);
+  
   const handleLogin = () => {
     setToggle(false);
   };
@@ -15,17 +16,6 @@ function LandingPage() {
   };
   return (
      <div>
-       {/* <div className="both-container">
-         <div className="left-container">
-           <div className="logo-box">
-             <img src={Landinglogo} alt="Landing Logo" />
-           </div>
-           <div className="landing-heading">
-             <h4>ONLINE BOOK SHOPPING</h4>
-           </div>
-         </div>
-       </div> */}
-      
         {toggle ? (
           <SignUp onSignUp={handleLogin} />
         ) : (

@@ -10,7 +10,7 @@ function Footer() {
     return (
         <Grid container className='footerbox' >
             <Item id='FooterItem' xs={12} sm={6} md={4} lg={3} >
-                <span>Copyright © 2020, Bookstore Private Limited. All Rights Reserved</span>
+                <p>Copyright © 2020, Bookstore Private Limited. All Rights Reserved</p>
             </Item>
         </Grid>
     )

@@ -1,0 +1,45 @@
+.grid-summery-main{
+    padding: 1em;
+}
+#summery-bookname{
+    text-align: left;
+font: normal normal normal 14px/17px Lato;
+letter-spacing: 0px;
+color: #0A0102;
+opacity: 1;
+}
+
+.summery-author{
+    margin-top: 0.5em;
+    font: normal normal normal 11px/15px Lato;
+    text-transform:capitalize;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    
+}
+
+.summery-price-main{
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.summery-discount-price{
+    text-align: left;
+    font: normal normal bold 15px/18px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.summery-price-price{
+    text-align: left;
+    text-decoration: line-through;
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+    margin-left: 0.8em;
+
+}

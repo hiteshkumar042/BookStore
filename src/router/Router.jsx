@@ -6,6 +6,7 @@ import SignUp from '../pages/SignUp/SignUp';
 import LogIn from '../pages/LogIn/LogIn';
 import Dashboard from '../componnents/dashboard/Dashboard';
 import CartPage from '../pages/mycartpage/CartPage';
+import OrderPlaced from '../pages/orderplaced/OrderPlaced';
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
           <Route  path={"/signup"} element={<AuthRoute><SignUp /></AuthRoute>} />
           <Route path={"/dashboard"} element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path={"/cart"} element={<ProtectedRoute><CartPage/></ProtectedRoute>} />
+          <Route path={"/order-confirmation"} element={<ProtectedRoute><OrderPlaced/></ProtectedRoute>} />
 
         </Routes>
 
