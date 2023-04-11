@@ -1,4 +1,4 @@
-import { Outlet, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import React from "react";
 
 const AuthRoute = ({ children }) => {
@@ -8,7 +8,7 @@ const AuthRoute = ({ children }) => {
     return children;
 }
 return <Navigate to="/dashboard" />;
-  console.log("l")
+  // console.log("l")
 };
 
 export default AuthRoute;

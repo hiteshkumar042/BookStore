@@ -8,11 +8,14 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from 'react-router-dom';
 import AddressDetails from "../../componnents/addressdetails/AddressDetails";
 import OrderSummery from "../../componnents/ordersummery/OrderSummery";
+import { Navigate } from "react-router-dom";
 
 
 function CartPage() {
   const [cartItems, setCartItem] = React.useState([]);
   const [toggle,setToggle] = React.useState({mycart:false,addressDetails:false,orderSumm:false});
+  const [orderConfirmation,setOrderConfirmation] = React.useState('')
+  
   // console.log(cartItems)
 
   //getting cart items
@@ -56,6 +59,7 @@ function CartPage() {
     let data = { orders: arrayForHittingServer }
         let response = await AddOrderService(data)
         console.log(response);
+        setOrderConfirmation('/order-confirmation')
   }
 
 
@@ -147,7 +151,7 @@ function CartPage() {
         }
          
          <div className="order-summery-btn">
-         <Link to="/order-confirmation">
+        <Link to={orderConfirmation}>
          <button onClick={checkout} >CHECKOUT</button>
          </Link>
           

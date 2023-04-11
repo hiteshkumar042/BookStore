@@ -1,25 +1,64 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import BookCard from '../bookcard/BookCard'
 import Header from '../header/Header'
 import './Dashboard.css'
 import Footer from '../footer/Footer'
 import Grid from "@mui/material/Grid";
 import { getBooks } from '../../services/DataServices';
-import BookDetails from '../bookdetails/BookDetails'
+import BookDetails from '../bookdetails/BookDetails';
+import Pagination from '@mui/material/Pagination';
 
 function Dashboard() {
-  const [book, setbook] = React.useState([])
-  const [toggle, setToggle]= React.useState(true)
-  const [bookData, setBookData] = React.useState()
+  const [book, setbook] = useState([])
+  const [toggle, setToggle]= useState(true)
+  const [bookData, setBookData] = useState()
+  const [numofPages,setNumofPages] = useState(0);
+  const [booklimit,setBookLimit] = useState(8);
+  const [searchItem, setSearchItem] = useState("");
+  const [filterData,setFilterData] = useState(false);
+  const [filterToggle, setFilterToggle] = useState(false);
+
+
+
   const loaddata = async () => {
       let response = await getBooks()
       console.log(response)
-      let arr = response.data.result
-      setbook(arr)
+      let arr = response.data.result;
+      let num = Math.ceil(response.data.result?.length/8)
+      // console.log(num)
+      setNumofPages(num)
+      setbook(arr.slice(0,booklimit))
   }
-  React.useEffect(() => {
+
+  const setPage=async(event,pagenum)=>{
+    let response = await getBooks()
+      console.log(response)
+      let arr = response.data.result;
+      setbook(arr.slice(booklimit*(pagenum-1),booklimit*pagenum))
+  }
+
+  useEffect(() => {
     loaddata()
   },[])
+
+  //Search Item
+  useEffect(() => {
+    setFilterData(
+      book.filter(
+        (bookObject) =>
+          bookObject.author.toLowerCase().includes(searchItem.toLowerCase()) ||
+          bookObject.bookName.toLowerCase().includes(searchItem.toLowerCase())
+      )
+    );
+    if (searchItem.length !== 0) {
+      setFilterToggle(true);
+    } else {
+      setFilterToggle(false);
+      loaddata()
+    }
+    console.log(filterData);
+  }, [searchItem]);
+
 
   const bookObjFn = (data)=>{
     setBookData(data)
@@ -31,7 +70,7 @@ function Dashboard() {
 
 
     {
-      toggle?<div><Header/>
+      toggle?<div><Header setSearchItem={setSearchItem}/>
       <div id="dash-main-container">
         <div id="second-row">
           <div id="left-side-book">
@@ -48,7 +87,9 @@ function Dashboard() {
         
           <Grid  container spacing={4}>
           {
-            book.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
+            filterToggle?
+            filterData.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
+            :book.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
           }
           </Grid>:
         
@@ -58,7 +99,9 @@ function Dashboard() {
           
         
         {/* </div> */}
+        <Pagination onChange={setPage} color='primary' style={{margin:'auto'}} count={numofPages} />
         </div>
+        
       <Footer/></div>:<BookDetails setToggle={setToggle} bookData={bookData}/>
     }  
       

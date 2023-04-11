@@ -59,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function Header({goForLogin,totalCartQty}) {
+export default function Header({goForLogin,totalCartQty,setSearchItem}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -190,6 +190,7 @@ export default function Header({goForLogin,totalCartQty}) {
                             <StyledInputBase
                                 placeholder="Search…"
                                 inputProps={{ 'aria-label': 'search' }}
+                               onChange={(event)=>setSearchItem(event.target.value)} 
                             />
                         </Search>
                         <Box sx={{ flexGrow: 1 }} />
