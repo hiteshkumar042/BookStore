@@ -10,6 +10,7 @@ function MyCartComponent({ bookObj, getCartItem }) {
   const deleteItem = async () => {
     let response = await removeItemCartService(bookObj._id);
     console.log(response);
+    window.location.reload("true")
   };
 
   return (

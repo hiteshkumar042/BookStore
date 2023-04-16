@@ -91,7 +91,7 @@ function Dashboard() {
             filterData.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
             :book.map((bookObj)=>(<BookCard key={bookObj._id} setToggle={setToggle} bookObjFn={bookObjFn} bookObj={bookObj}/>))
           }
-          </Grid>:
+          </Grid>
         
         </div>
         
@@ -99,7 +99,7 @@ function Dashboard() {
           
         
         {/* </div> */}
-        <Pagination onChange={setPage} color='primary' style={{margin:'auto'}} count={numofPages} />
+        <Pagination onChange={setPage} color='primary' style={{margin:'2em auto 0'}} count={numofPages} />
         </div>
         
       <Footer/></div>:<BookDetails setToggle={setToggle} bookData={bookData}/>

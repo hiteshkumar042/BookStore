@@ -59,7 +59,11 @@ function LogIn(props) {
       let response = await login(logInObj);
       localStorage.setItem("token", response.data.result.accessToken);
       console.log(response);
-      console.log(response.data.message);
+      //Auto Reload
+      if(response.data.success==true){
+        window.location.reload("true")
+      }
+      
     }
 
     
@@ -86,15 +90,15 @@ function LogIn(props) {
         flexWrap: 'wrap',
         '& > :not(style)': {
           p:5,
-          width: '25vw',
+          Width: '25vw',
           
         },
       }}
     >
      <Paper elevation={4}>
      <div className="login-signup">
-        <h2 style={{color:"red"}} className="login-h">LOGIN</h2>
-        <h2 onClick={handleClick}>SIGNUP</h2>
+        <h2 style={{color:"red",cursor:"pointer",textDecoration:"underline"}} className="login-h">LOGIN</h2>
+        <h2 style={{cursor:"pointer"}} onClick={handleClick}>SIGNUP</h2>
       </div>
       <div className="email-input">
         <TextField onChange={getEmail} error={regexObj.emailBorder} helperText={regexObj.emailHelper} fullWidth size="small" label="Email" id="fullWidth" />
@@ -111,7 +115,7 @@ function LogIn(props) {
         <h5>----- OR ------</h5>
       </div>
       <div className="fb-gg">
-          <button className="fb-btn">facebook</button>
+          <button className="fb-btn">Facebook</button>
           <button className="gg-btn">Google</button>
       </div>
 

@@ -1,6 +1,5 @@
 import "./LandingPage.css";
 import React, { useState } from "react";
-import Landinglogo from "../../assets/2766594.png";
 import LogIn from "../LogIn/LogIn";
 import SignUp from "../SignUp/SignUp";
 

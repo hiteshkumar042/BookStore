@@ -12,13 +12,12 @@ import InputBase from '@mui/material/InputBase';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 
 
 
@@ -58,6 +57,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         },
     },
 }));
+
+//logout functionality
+const logoutHandle = ()=>{
+    localStorage.removeItem("token")
+    window.location.reload("true")
+}
 
 export default function Header({goForLogin,totalCartQty,setSearchItem}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -104,18 +109,19 @@ export default function Header({goForLogin,totalCartQty,setSearchItem}) {
             <div className='prfmenu'>
                 <MenuItem onClick={handleMenuClose}>
                     <div className='prfmn1' >
-                    <div id='m1'>Welcome</div>
-                    <div id='m2'>To access account and manage tokens</div>
+                    <div id='m1'>Welcome! User</div>
                     </div>
                 </MenuItem>
-                <MenuItem className='prfmenu1'>
+                {/* <MenuItem className='prfmenu1'>
                     <div id='m3'onClick={goForLogin} >LOGIN/SIGNUP</div>
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem className='prfmn2'>
-                    <div id='m4'><CardGiftcardIcon /> My Orders</div>
+                
+                    <div id='m4'><ManageAccountsOutlinedIcon/>Manage Profile</div>
                 </MenuItem>
                 <MenuItem className='prfmn3'>
-                    <div id='m5'><FavoriteBorderOutlinedIcon /> Wishlist</div>
+                
+                    <div onClick={logoutHandle} id='m5'><LogoutOutlinedIcon/>Logout</div>
                 </MenuItem>
             </div>
         </Menu>
@@ -139,29 +145,26 @@ export default function Header({goForLogin,totalCartQty,setSearchItem}) {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton size="large" >
-                <CardGiftcardIcon />
-                </IconButton>
-                <p>My orders</p>
+                <p>Welcome! User</p>
             </MenuItem>
             <MenuItem>
                 <IconButton
                     size="large"
                 >
-                   <FavoriteBorderOutlinedIcon />
+                   <ManageAccountsOutlinedIcon color='action'/>
                 </IconButton>
-                <p>Wishlist</p>
+                <p>Manage Profile</p>
             </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
+            <MenuItem >
                 <IconButton
                     size="large"
                     aria-label="account of current user"
                     aria-controls="primary-search-account-menu"
                     aria-haspopup="true"
                 >
-                    <AccountCircle />
+                    <LogoutOutlinedIcon color='action'/>
                 </IconButton>
-                <p>Profile</p>
+                <p onClick={logoutHandle} >Logout</p>
             </MenuItem>
         </Menu>
     );
@@ -179,7 +182,7 @@ export default function Header({goForLogin,totalCartQty,setSearchItem}) {
                             noWrap
                             component="div"
                             className='book-store-h'
-                            sx={{ margin:'5px', display: { xs: 'none', sm: 'block' } }}
+                            sx={{ margin:'5px' }}
                         >
                             Bookstore
                         </Typography>
@@ -210,7 +213,7 @@ export default function Header({goForLogin,totalCartQty,setSearchItem}) {
                                 <Badge badgeContent={totalCartQty} color="warning">
                                 <div className="icon-cart2">
                                 <ShoppingCartOutlinedIcon/>
-                                <div>Cart</div>
+                                <div id='cart-margin-icon'>Cart</div>
                                 </div>
                                 
                                 </Badge> 

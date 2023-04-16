@@ -60,8 +60,8 @@
     width: 20px;
 }
 .prfmenu {
-    height: 25vh;
-    width: 18vw; 
+    height: 16vh;
+    min-width: 13vw; 
 }
 
 .prfmenu1 {
@@ -70,15 +70,15 @@
 
 .prfmn1 {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    
+    align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 30px;
 }
 
 #m1 {
     cursor: auto;
-    font-size: 12px;
+    font-size: 13px;
     color: #0A0102;
 }
 
@@ -103,8 +103,9 @@
 #m4,
 #m5 {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 8px;
     font-size: 12px;
     width: 90px;
     height: 25px;
@@ -123,11 +124,25 @@
         
     }
     .img1 img{
-    margin-right: 2em; 
+    margin-right: 1em; 
     }
+}
+
+#cart-margin-icon{
+    margin-top: 0.8em;
 }
 
 .icon-cart2{
     display: flex;
     flex-direction: column;
+}
+
+.MuiInputBase-root{
+    width: 25vw;
+}
+
+@media screen and (max-width:900px){
+    .srchbox1{
+        display: none !important;
+    }
 }

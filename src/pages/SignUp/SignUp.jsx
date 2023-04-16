@@ -138,17 +138,17 @@ function SignUp(props) {
       <Box
         sx={{
           display: "flex",
-          flexWrap: "wrap",
-          "& > :not(style)": {
+          flexWrap: "wrap","& > :not(style)": {
             p: 5,
-            width: "25vw",
+            minwidth: "20vw",
+            
           },
         }}
       >
         <Paper elevation={4}>
           <div className="signup-login">
-            <h2 onClick={handleClick}>LOGIN</h2>
-            <h2 style={{ color: "red" }}>SIGNUP</h2>
+            <h2 style={{cursor:"pointer"}} onClick={handleClick}>LOGIN</h2>
+            <h2 style={{ color: "red",cursor:'pointer',textDecoration:"underline" }}>SIGNUP</h2>
           </div>
           <div className="name-input-signup">
             <TextField
